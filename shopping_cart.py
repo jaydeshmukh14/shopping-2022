@@ -1,6 +1,7 @@
 # shopping_cart.py
 
 from time import time
+import os 
 
 
 products = [
@@ -46,11 +47,14 @@ store_name = "JAY FOODS GROCERY"
 website_name = "WWW.JAYFOODS.COM"
 matching_products = []
 
+tax_rate = float(input("Please enter the tax rate for your jurisdiction (as a decimal percent): "))
+
 while True:
 
 
-    # ASK FOR USER INPUT
+    # ASK FOR USER INPUT ON PRODUCT AND ON TAX RATE 
 
+    
     product_id = input("Please input a product identifier, type DONE when finished: ")
     #print(product_id) #> "9"
     #print(type(product_id)) #> str
@@ -91,9 +95,9 @@ for stuff in matching_products:
 
 from datetime import datetime
 now = datetime.now()
-proper_format = now.strftime("%d/%m/%y %H:%M:%S")
+proper_format = now.strftime("%Y/%m/%d %I:%M %p")
 
-tax = price_counter * 0.0875
+tax = price_counter * tax_rate
 
 print("----------------")
 print(store_name)
