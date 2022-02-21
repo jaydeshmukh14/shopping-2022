@@ -1,5 +1,8 @@
 # shopping_cart.py
 
+from time import time
+
+
 products = [
     {"id":1, "name": "Chocolate Sandwich Cookies", "department": "snacks", "aisle": "cookies cakes", "price": 3.50},
     {"id":2, "name": "All-Seasons Salt", "department": "pantry", "aisle": "spices seasonings", "price": 4.99},
@@ -39,4 +42,70 @@ def to_usd(my_price):
 
 # TODO: write some Python code here to produce the desired output
 
-print(products)
+store_name = "JAY FOODS GROCERY"
+website_name = "WWW.JAYFOODS.COM"
+matching_products = []
+
+while True:
+
+
+    # ASK FOR USER INPUT
+
+    product_id = input("Please input a product identifier: ")
+    #print(product_id) #> "9"
+    #print(type(product_id)) #> str
+    if product_id == "DONE":
+        break
+
+    # LOOK UP CORRESPONDING PRODUCTS
+
+    # print product that has an id attribute equal to "9"
+
+    #matching_products = []
+
+    #for x in products:
+
+        #if str(x["id"]) == str(product_id):
+            # this is a match
+            #matching_products.append(x)
+    for product in products:
+        if str(product_id) == str(product["id"]):
+            matching_products.append(product)
+
+    #print(matching_products)
+    #print(type(matching_products))
+    #print(len(matching_products))
+    # print the name of the matching product
+    #matching_product = matching_products[0]
+    #print(matching_product["name"], matching_product["price"])
+
+
+price_counter = 0
+for stuff in matching_products:
+    price_counter = price_counter + stuff["price"]
+
+from datetime import datetime
+now = datetime.now()
+proper_format = now.strftime("%d/%m/%y %H:%M:%S")
+
+tax = price_counter * 0.0875
+
+print("----------------")
+print(store_name)
+print(website_name)
+print("----------------")
+print("Checkout at:", proper_format)
+print("----------------")
+print("Selected Products:")
+for y in matching_products:
+    print("...." + y["name"] + " (" + to_usd(y["price"])+ ")")
+print("----------------")
+print("SUBTOTAL:", price_counter)
+print("TAX:", to_usd(tax))
+print("TOTAL:", to_usd(tax + price_counter))
+
+
+
+
+
+
