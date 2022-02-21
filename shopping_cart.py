@@ -51,9 +51,12 @@ while True:
 
     # ASK FOR USER INPUT
 
-    product_id = input("Please input a product identifier: ")
+    product_id = input("Please input a product identifier, type DONE when finished: ")
     #print(product_id) #> "9"
     #print(type(product_id)) #> str
+    #if int(product_id) > len(products):
+        #print("SORRY, TRY AGAIN - INVALID ID")
+        
     if product_id == "DONE":
         break
 
@@ -98,7 +101,7 @@ print("Checkout at:", proper_format)
 print("----------------")
 print("Selected Products:")
 for y in matching_products:
-    print("...." + y["name"] + " (" + to_usd(y["price"])+ ")")
+    print(".... " + y["name"] + " (" + to_usd(y["price"])+ ")")
 print("----------------")
 print("SUBTOTAL:", to_usd(price_counter))
 print("TAX:", to_usd(tax))
