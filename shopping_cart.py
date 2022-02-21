@@ -54,11 +54,13 @@ while True:
     product_id = input("Please input a product identifier, type DONE when finished: ")
     #print(product_id) #> "9"
     #print(type(product_id)) #> str
-    #if int(product_id) > len(products):
-        #print("SORRY, TRY AGAIN - INVALID ID")
-        
-    if product_id == "DONE":
+
+    if product_id == "DONE" or product_id == "done":
         break
+
+    if int(product_id) > len(products) or int(product_id) <=0:
+        print("SORRY, TRY AGAIN - INVALID ID")
+        
 
     # LOOK UP CORRESPONDING PRODUCTS
 
