@@ -100,9 +100,13 @@ print("Selected Products:")
 for y in matching_products:
     print("...." + y["name"] + " (" + to_usd(y["price"])+ ")")
 print("----------------")
-print("SUBTOTAL:", price_counter)
+print("SUBTOTAL:", to_usd(price_counter))
 print("TAX:", to_usd(tax))
 print("TOTAL:", to_usd(tax + price_counter))
+print("----------------")
+print("Thanks for Shopping at JAY FOODS GROCERIES!")
+print("----------------")
+
 
 
 
