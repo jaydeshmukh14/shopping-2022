@@ -27,14 +27,5 @@ Run the shopping cart code:
 python shopping_cart.py
 ```
 
-## Testing
-
-Run tests:
-
-```sh
-pytest
-```
 ## this is the ".env" file...
-TAX_RATE=0.0875
-
- 
+TAX_RATE=0.0875 python shopping_cart.py
