@@ -47,7 +47,10 @@ store_name = "JAY FOODS GROCERY"
 website_name = "WWW.JAYFOODS.COM"
 matching_products = []
 
-tax_rate = float(input("Please enter the tax rate for your jurisdiction (as a decimal percent): "))
+
+
+
+tax_rate = os.getenv("TAX_RATE", default=0.0875)
 
 while True:
 
